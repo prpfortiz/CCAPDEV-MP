@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/js/register.js"></script>
+</head>
+
+        <body>
+
+            <div class="box_top">
+                <h1>Expense Tracker</h1>
+                <img id="logo" src="/images/logo.png" />
+            </div>
+
+            <div class="box_page_label">
+                <h2>Register</h2>
+            </div>
+
+            <div class="box_main">
+
+                <h3>Please fill out all the fields</h3>
+
+                <form method="post" id="register">
+
+                    <div class="box_bullet">
+                        <label for="fname">First Name</label>
+                        <input type="text" name="fname" id="fname" required />
+                        <small class="error" id="errorFname"></small>
+                    </div>
+
+                    <div class="box_bullet">
+                        <label for="lname">Last Name</label>
+                        <input type="text" name="lname" id="lname" required />
+                        <small class="error" id="errorLname"></small>
+                    </div>
+
+                    <div class="box_bullet">
+                        <label for="bday">Birthdate</label>
+                        <input type="date" name="bday" id="bday" required />
+                    </div>
+
+                    <div class="box_bullet">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" required />
+                        <small class="error" id="errorUsername"></small>
+                    </div>
+
+                    <div class="box_bullet">
+                        <label for="pw1">Password</label>
+                        <input type="password" name="pw1" id="pw1" required />
+                        <small class="error" id="errorPw1"></small>
+                    </div>
+
+                    <div class="box_bullet">
+                        <label for="pw2">Confirm your password</label>
+                        <input type="password" name="pw2" id="pw2" required />
+                        <small class="error" id="errorPw2"></small>
+                    </div>
+
+                    <div class="box_bullet">
+                        <input type="submit" id="submit" value="LOGIN">
+                    </div>
+                </form>
+
+                <h3 class="error" id="errorPage"></h3>
+                <a href="/">Back to login page</a>
+
+            </div>
+
+        </body>
+
+</html>

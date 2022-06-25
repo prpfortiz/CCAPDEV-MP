@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .center {
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+        }
+
+        .right-text {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box_top">
+        <h1>Expense Tracker</h1>
+        <img id="logo" src="logo.png" />
+    </div>
+
+    <div class="box_page_label">
+        <h2>Entry</h2>
+    </div>
+
+    <div class="center" id="entry">
+        <form method="post">
+            <table>
+                <tr>
+                    <td colspan="2"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="date">Date</label>
+                    </td>
+                    <td>
+                        <input type="date" id="date" name="date" required />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="category">Category</label>
+                    </td>
+                    <td>
+                        <select id="category" name="category" required>
+                            <option value="Food">Food</option>
+                            <option value="Transportation">Transportation</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="amount">Amount</label>
+                    </td>
+                    <td>
+                        <input type="number" id="amount" name="amount" required />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="notes">Notes</label>
+                    </td>
+                    <td>
+                        <input type="text" id="notes" name="notes" required />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="border-bottom: 0px">
+                        <button type="submit">Save</button>
+                        <button type="button">Edit</button>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+        <a href="homepage.html">Home</a>
+    </div>
+
+
+    <script src="entry.js"></script>
+</body>
+
+</html>

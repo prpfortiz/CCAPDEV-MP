@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Expense Tracker</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+
+    <body>
+
+        <div class="box_top">
+            <h1>Expense Tracker</h1>
+            <img id = "logo" src="logo.png"/> 
+        </div>
+
+        <div class="box_page_label">
+            <h2>Edit Profile</h2>
+        </div>
+
+        <div class="box_main">
+            <form method="post" id="editprofile">
+                <div class="box_bullet">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required/>
+                    <small></small>
+                </div>
+
+                <div class="box_bullet">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" required/>
+                    <small></small>
+                </div>
+
+                <div class="box_bullet">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" required/>
+                    <small></small>
+                </div>
+
+                <div class="box_bullet">    
+                    <label for="bday">Birthdate</label>
+                    <input type="date" id="bday" required/>
+                    <small></small>
+                </div>
+                
+                <div class="box_bullet">    
+                    <label for="pword">Password</label>
+                    <input type="password" id="pword" required/>
+                    <small></small>
+                </div>
+
+                <div class="box_bullet">                  
+                    <button type="submit">Save</button>
+                </div>
+            </form>
+            <a href="profile.html">Back to profile</a></br>
+            <a href="homepage.html">Home</a>
+        </div>
+        <script src="userdata.js"></script>
+        <script src="profile.js"></script>
+        <script src="editprofile.js"></script>
+    </body>
+</html>
