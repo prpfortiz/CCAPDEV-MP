@@ -11,5 +11,7 @@ app.get('/register', registerController.getRegister);
 app.get('/getCheckUsername', registerController.getCheckUsername);
 app.post('/register', registerController.postRegister);
 app.get('/homepage', appController.getHomepage);
-//app.get('/profile', appController.getProfile);
+app.get('/profile', appController.getProfile);
+app.get('/editprofile', appController.getEditProfile);
+app.post('/editprofile', appController.postEditProfile);
 module.exports = app;
