@@ -1,5 +1,6 @@
 const db = require('../models/db.js');
 const User = require('../models/UserModel.js');
+const bcrypt = require('bcrypt');
 
 function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -25,19 +26,22 @@ const registerController = {
         var bday = req.body.bday;
         var username = req.body.username;
         var pw = req.body.pw1;
-
-        var user = {
-            fname: fname,
-            lname: lname,
-            bday: bday,
-            username: username,
-            pw: pw
-        }
-        db.insertOne(User, user, function (flag) {
-            if (flag) {
-                res.redirect('/');
+        const saltRounds = 10;
+        bcrypt.hash(pw, saltRounds, (err, hashed) => {
+            var user = {
+                fname: fname,
+                lname: lname,
+                bday: bday,
+                username: username,
+                pw: hashed
             }
-        })
+
+            db.insertOne(User, user, function (flag) {
+                if (flag) {
+                    res.redirect('/');
+                }
+            })
+        }); 
     }
 }
 
