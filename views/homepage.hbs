@@ -17,10 +17,10 @@
 
         <div class="box_page_label">
             <h2>Home</h2>
-            Sort by: <br>
+            Sort by: <br> <br> <br>
             <label for="category">Category:</label>
-            <select name="category" id="category">
-                <option label=" "></option>
+            <select name="category" id="category" required>
+                <option label=" " selected disabled hidden></option>
                 <option value="food">Food</option>
                 <option value="billing">Billing</option>
                 <option value="household">Household/Groceries</option>
@@ -28,10 +28,13 @@
                 <option value="transportation">Transportation</option>
             </select>
             <label for="date">Date:</label>
-            <input type="date" id="date"/>
+            <input type="date" id="date" required/>
             <label for="amount">Amount:</label>
-            <input type="number" id="amount"/>-<input type="number" id="amount"/>
-            <a href="/entry"><button>Add Entry</button></a>
+            <input type="number" id="amount" required/>
+            <label for="notes">Notes:</label>
+            <input type="text" id="notes"/>
+            <button>Add Entry</button>
+            {{!-- TODO: Decide whether to use AJAX or normal POST form submission --}}
         </div>
 
         <div class="box_main">
