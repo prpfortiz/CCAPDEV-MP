@@ -13,15 +13,18 @@ const controller = {
     },
 
     postLogin: function (req, res) {
+        // console.log('im called');  
+        
         var username = req.body.username;
         var pw = req.body.pw;
         db.findOne(User, { username: username }, '_id username pw', function (result) {
-            var user = {
-                _id: result._id,
-                username: result.username,
-                pw: result.pw
-            }
             if (result) {
+                var user = {
+                    _id: result._id,
+                    username: result.username,
+                    pw: result.pw
+                }
+
                 bcrypt.compare(pw, user.pw, (err, result) => {
                     if (result) {
                         req.session._id = user._id;
@@ -32,6 +35,9 @@ const controller = {
             }
             else {
                 res.redirect('/');
+                // console.log('User not found');
+                // res.status(401);
+                // res.end();
             }
         });
     }
