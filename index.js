@@ -19,7 +19,7 @@ hostname = process.env.HOSTNAME;
 app.use(express.static(`public`));
 app.use(session({
     secret: 'EASsz3xrBr',
-    store: MongoStore.create({mongoUrl: process.env.DB_URL}),
+    store: MongoStore.create({ mongoUrl: process.env.DB_URL }),
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false, maxAge: 1000 * 60 * 60 * 24 * 7 }

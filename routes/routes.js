@@ -8,10 +8,15 @@ app.get(`/favicon.ico`, controller.getFavicon);
 app.get(`/`, controller.getIndex);
 app.post('/', controller.postLogin);
 app.get('/register', registerController.getRegister);
-app.get('/getCheckUsername', registerController.getCheckUsername);
 app.post('/register', registerController.postRegister);
+app.get('/getCheckUsername', registerController.getCheckUsername);
 app.get('/homepage', appController.getHomepage);
 app.get('/profile', appController.getProfile);
 app.get('/editprofile', appController.getEditProfile);
 app.post('/editprofile', appController.postEditProfile);
+app.post('/addexpense', appController.postAddExpense);
+app.get('/getexpenses', appController.getExpenses);
+app.post('/editexpense', appController.postEditExpense);
+app.delete('/deleteexpense/:id', appController.deleteExpense);
+// app.delete('/deleteaccount/:userid', appController.deleteAccount);')  // TODO: delete account
 module.exports = app;
