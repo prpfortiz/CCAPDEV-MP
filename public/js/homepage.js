@@ -116,7 +116,7 @@ $(document).ready(function () {
         var trId = triggeredEditBtn.closest('tr').attr('id'); // Find the id of the closest tr from the button
         console.log(trId);
 
-        $(this).find('.btn-primary').attr('data-id', trId);
+        $(this).find('.modal-body').append($('<input type="hidden" name="entryId">').val(trId));
 
         $(this).find('#category').val(triggeredEditBtn.closest('tr').find('td:eq(0)').text());
         $(this).find('#date').val(triggeredEditBtn.closest('tr').find('td:eq(1)').text());

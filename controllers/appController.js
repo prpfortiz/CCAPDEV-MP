@@ -67,9 +67,7 @@ const appController = {
         entry.category = req.body.category;
         entry.notes = req.body.notes;
         db.insertOne(Entry, entry, function (flag) {
-            // if (flag) {
-            //     res.redirect('/profile');
-            // }
+            // Response is necessary or else it will hang/freeze
             console.log('Successful: ' + flag);
             res.redirect('/homepage');
         });
@@ -81,6 +79,19 @@ const appController = {
             // res.render('expenses', { expenses: result });
             console.log(result);
             res.status(200).send(result);
+        });
+    },
+
+    postEditExpense: function (req, res) {
+        var id = req.body.entryId;
+        var date = req.body.date;
+        var category = req.body.category;
+        var amount = req.body.amount;
+        var notes = req.body.notes;
+        db.updateOne(Entry, { _id: id }, { date: date, category: category, amount: amount, notes: notes }, function (flag) {
+            // Response is necessary or else it will hang/freeze
+            console.log('Successful: ' + flag);
+            res.redirect('/homepage');
         });
     },
 
