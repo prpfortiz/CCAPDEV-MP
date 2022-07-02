@@ -23,10 +23,10 @@
     <div class="box_page_label">
         <h2>Home</h2>
         {{!-- FIXME: Sort by: <br> <br> <br> --}}
-        <form class="row g-3">
+        <form class="row g-3" method="POST" action="/addexpense">
             <div class="col-md-3">
                 <label class="form-label" for="category">Category:</label>
-                <select class="form-select" name="category" id="category" required>
+                <select class="form-select" id="category" name="category" required>
                     <option label=" " selected disabled hidden></option>
                     <option value="housing">Housing</option>
                     <option value="transportation">Transportation</option>
@@ -45,22 +45,37 @@
             </div>
             <div class="col-md-3">
                 <label class="form-label" for="date">Date:</label>
-                <input class="form-control" type="date" id="date" required />
+                <input class="form-control" type="date" id="date" name="date" required />
             </div>
             <div class="col-md-2">
                 <label class="form-label" for="amount">Amount:</label>
-                <input class="form-control" type="number" id="amount" required />
+                <input class="form-control" type="number" id="amount" name="amount" required />
             </div>
             <div class="col-md-4">
                 <label class="form-label" for="notes">Notes:</label>
-                <input class="form-control" type="text" id="notes" />
+                <input class="form-control" type="text" id="notes" name="notes" required />
             </div>
             <div class="d-grid gap-2 col-5 mx-auto">
-                <button class="btn btn-primary" type="button">Add expense</button>
+                <button class="btn btn-primary" type="submit" id="addexpense">Add expense</button>
+                {{!-- <input class="btn btn-primary" type="submit" id="addexpense" value="Add expense"> --}}
             </div>
             {{!-- <button>Add Entry</button> --}}
             {{!-- TODO: Decide whether to use AJAX or normal POST form submission --}}
         </form>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Category</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{!-- TODO: handlebars --}}
+            </tbody>
+        </table>
     </div>
 
     <div class="box_main">

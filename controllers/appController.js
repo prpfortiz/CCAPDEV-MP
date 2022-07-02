@@ -19,11 +19,11 @@ const appController = {
     getHomepage: function (req, res) {
         res.render('homepage');
     },
-    
+
     getProfile: function (req, res) {
         currUser._id = req.session._id;
-        
-        db.findOne(User, { _id: currUser._id}, 'fname lname bday username', function (result) {
+
+        db.findOne(User, { _id: currUser._id }, 'fname lname bday username', function (result) {
             currUser.fname = result.fname;
             currUser.lname = result.lname;
             currUser.bday = result.bday;
@@ -34,7 +34,7 @@ const appController = {
 
     getEditProfile: function (req, res) {
         currUser._id = req.session._id;
-        
+
         db.findOne(User, { _id: currUser._id }, 'fname lname bday username', function (result) {
             currUser.fname = result.fname;
             currUser.lname = result.lname;
@@ -52,6 +52,26 @@ const appController = {
             if (flag) {
                 res.redirect('/profile')
             }
+        });
+    },
+
+    // this works
+    postAddExpense: function (req, res) {
+        console.log('Current session: ' + req.session._id);
+
+        var entry = new Entry();
+        entry.user = req.session._id;
+        // entry.user = req.body.id;
+        entry.date = req.body.date;
+        entry.amount = req.body.amount;
+        entry.category = req.body.category;
+        entry.notes = req.body.notes;
+        db.insertOne(Entry, entry, function (flag) {
+            // if (flag) {
+            //     res.redirect('/profile');
+            // }
+            console.log(flag);
+            res.redirect('/homepage');
         });
     }
 }

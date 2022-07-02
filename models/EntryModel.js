@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var EntrySchema = new mongoose.Schema({
     user: {
-        type: String,
+        type: mongoose.ObjectId,
         required: true
     },
     date: {
@@ -18,7 +18,8 @@ var EntrySchema = new mongoose.Schema({
         required: true
     },
     notes: {
-        type: String
+        type: String,
+        required: true
     }
 });
 
