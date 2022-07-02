@@ -70,10 +70,19 @@ const appController = {
             // if (flag) {
             //     res.redirect('/profile');
             // }
-            console.log(flag);
+            console.log('Successful: ' + flag);
             res.redirect('/homepage');
         });
+    },
+
+    getExpenses: function (req, res) {
+        currUser._id = req.session._id;
+        db.findMany(Entry, { user: currUser._id }, 'date category amount notes', function (result) {
+            // res.render('expenses', { expenses: result });
+            console.log(result);
+            res.status(200).send(result);
+        });
     }
-}
+};
 
 module.exports = appController;

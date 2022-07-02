@@ -15,4 +15,5 @@ app.get('/profile', appController.getProfile);
 app.get('/editprofile', appController.getEditProfile);
 app.post('/editprofile', appController.postEditProfile);
 app.post('/addexpense', appController.postAddExpense);
+app.get('/getexpenses', appController.getExpenses);
 module.exports = app;
