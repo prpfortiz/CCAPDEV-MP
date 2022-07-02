@@ -77,9 +77,16 @@ const appController = {
 
     getExpenses: function (req, res) {
         currUser._id = req.session._id;
-        db.findMany(Entry, { user: currUser._id }, 'date category amount notes', function (result) {
+        db.findMany(Entry, { user: currUser._id }, 'date category amount notes _id', function (result) {
             // res.render('expenses', { expenses: result });
             console.log(result);
+            res.status(200).send(result);
+        });
+    },
+
+    deleteExpense: function (req, res) {
+        const { id } = req.params;
+        db.deleteOne(Entry, { _id: id }, function (result) {
             res.status(200).send(result);
         });
     }
