@@ -18,7 +18,7 @@ $(document).ready(function () {
             var table = $('#expensetable');
             table.empty();
             for (var i = 0; i < result.length; i++) {
-                var btnEdit = $('<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">').append($('<i class="fas fa-edit">'));
+                var btnEdit = $('<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">').append($('<i class="fas fa-edit">'));
                 var btnDelete = $('<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">').append($('<i class="fas fa-trash-alt">'));
                 var btnGroup = $('<td>').append(btnEdit);
                 btnGroup.append(btnDelete);
@@ -86,7 +86,7 @@ $(document).ready(function () {
         var trId = triggeredDelBtn.closest('tr').attr('id'); // Find the id of the closest tr from the button
         console.log(trId);
 
-        $(this).find('.btn-danger').attr('data-id', trId); // Set the href of the delete button to the id of the expense
+        $(this).find('.btn-danger').attr('data-id', trId);
 
         $(this).find('.modal-body').html('ObjectId: <strong>' + trId + '</strong>'); // Set the title of the modal
     });
@@ -106,5 +106,26 @@ $(document).ready(function () {
                 updateTable();
             }
         });
+    });
+
+    $('#editModal').on('show.bs.modal', function (e) {
+        // This function is called when the modal is shown
+
+        var triggeredEditBtn = $(e.relatedTarget); // Button that triggered the modal
+
+        var trId = triggeredEditBtn.closest('tr').attr('id'); // Find the id of the closest tr from the button
+        console.log(trId);
+
+        $(this).find('.btn-primary').attr('data-id', trId);
+
+        $(this).find('#category').val(triggeredEditBtn.closest('tr').find('td:eq(0)').text());
+        $(this).find('#date').val(triggeredEditBtn.closest('tr').find('td:eq(1)').text());
+        $(this).find('#amount').val(triggeredEditBtn.closest('tr').find('td:eq(2)').text());
+        $(this).find('#notes').val(triggeredEditBtn.closest('tr').find('td:eq(3)').text());
+
+        // Remove Bootstrap classes since they are not relevant to this modal
+        $(this).find('.col-md-3').removeClass();
+        $(this).find('.col-md-2').removeClass();
+        $(this).find('.col-md-4').removeClass();
     });
 });
