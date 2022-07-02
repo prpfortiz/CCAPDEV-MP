@@ -89,6 +89,7 @@ $(document).ready(function () {
         $(this).find('.btn-danger').attr('data-id', trId); // Set the href of the delete button to the id of the expense
 
         $('.modal-body').html('ObjectId: <strong>' + trId + '</strong>'); // Set the title of the modal
+        $(this).find('.modal-body').html('ObjectId: <strong>' + trId + '</strong>'); // Set the title of the modal
     });
 
     $('#deleteModal').on('click', '.btn-danger', function (e) {
