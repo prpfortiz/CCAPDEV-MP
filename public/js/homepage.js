@@ -15,11 +15,17 @@ $(document).ready(function () {
         var table = $('#expensetable');
         table.empty();
         for (var i = 0; i < result.length; i++) {
+            var btnEdit = $('<button type="button" class="btn btn-primary">').append($('<i class="fas fa-edit">'));
+            var btnDelete = $('<button type="button" class="btn btn-danger">').append($('<i class="fas fa-trash-alt">'));
+            var btnGroup = $('<td>').append(btnEdit);
+            btnGroup.append(btnDelete);
+
             var row = $('<tr>');
             row.append($('<td>').text(result[i].category));
             row.append($('<td>').text(result[i].date));
             row.append($('<td>').text(result[i].amount));
             row.append($('<td>').text(result[i].notes));
+            row.append(btnGroup);
             table.append(row);
         }
     }
