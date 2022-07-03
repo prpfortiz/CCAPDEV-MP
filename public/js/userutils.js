@@ -11,4 +11,28 @@ $(document).ready(function () {
 
         $('#editFormFields').prop('disabled', false);
     });
+    $('#fname').keyup(function () {
+        var allowed = /^[A-Za-z ]+$/;
+        var fname = $('#fname').val();
+        if (allowed.test(fname)) {
+            $('#fname').css('background-color', 'white');
+            $('#submit').prop('disabled', false);
+        }
+        else {
+            $('#fname').css('background-color', '#b30000');
+            $('#submit').prop('disabled', true);
+        }
+    });
+    $('#lname').keyup(function () {
+        var allowed = /^[A-Za-z ]+$/;
+        var fname = $('#lname').val();
+        if (allowed.test(fname)) {
+            $('#lname').css('background-color', 'white');
+            $('#submit').prop('disabled', false);
+        }
+        else {
+            $('#lname').css('background-color', '#b30000');
+            $('#submit').prop('disabled', true);
+        }
+    });
 });
