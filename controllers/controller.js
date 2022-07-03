@@ -21,14 +21,12 @@ const controller = {
             if (result) {
                 var user = {
                     _id: result._id,
-                    username: result.username,
                     pw: result.pw
                 }
 
                 bcrypt.compare(pw, user.pw, (err, result) => {
                     if (result) {
                         req.session._id = user._id;
-                        req.session.username = user.username;
                         res.redirect('/homepage');
                     }
                 });

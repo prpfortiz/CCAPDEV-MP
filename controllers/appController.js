@@ -103,6 +103,15 @@ const appController = {
         db.deleteOne(Entry, { _id: id }, function (result) {
             res.status(200).send(result);
         });
+    },
+
+    getSignout: function (req, res) {
+        if (req.session) {
+            req.session.destroy(function () {
+                res.clearCookie('connect.sid');
+                res.redirect('/');
+            })
+        }
     }
 };
 
