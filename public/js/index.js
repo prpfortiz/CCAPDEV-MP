@@ -7,8 +7,12 @@ $(document).ready(function () {
             $('#errorLogin').text('Username and Password are required');
         }
         else {
+            var remember = false;
+            if ($('#remember').is(':checked')) {
+                remember = true;
+            }
             $('#errorLogin').text('');
-            $.post('/', { username: username, pw: pw }, function (result) {
+            $.post('/', { username: username, pw: pw, remember: remember }, function (result) {
             })
         }
     })

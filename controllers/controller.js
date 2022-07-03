@@ -17,6 +17,7 @@ const controller = {
         
         var username = req.body.username;
         var pw = req.body.pw;
+        var remember = req.body.remember;
         db.findOne(User, { username: username }, '_id username pw', function (result) {
             if (result) {
                 var user = {
@@ -27,6 +28,13 @@ const controller = {
                 bcrypt.compare(pw, user.pw, (err, result) => {
                     if (result) {
                         req.session._id = user._id;
+                        if (remember) {
+                            req.session.cookie.maxAge = 30 * 24 * 60 * 60 * 1000;
+                        }
+                        else {
+                            req.session.cookie.maxAge = false;
+                        }
+                        console.log(req.session.cookie);
                         res.redirect('/homepage');
                     }
                 });

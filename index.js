@@ -22,7 +22,7 @@ app.use(session({
     store: MongoStore.create({ mongoUrl: process.env.DB_URL }),
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false, maxAge: 1000 * 60 * 60 * 24 * 7 }
+    cookie: { secure: false, maxAge: null }
 }));
 app.use(`/`, routes);
 
