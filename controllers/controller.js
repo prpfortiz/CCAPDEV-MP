@@ -18,6 +18,7 @@ const controller = {
         var username = req.body.username;
         var pw = req.body.pw;
         var remember = req.body.remember;
+        console.log('remember val: ' + remember);
         db.findOne(User, { username: username }, '_id username pw', function (result) {
             if (result) {
                 var user = {
