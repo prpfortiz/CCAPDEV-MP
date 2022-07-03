@@ -17,7 +17,10 @@ function capitalize(string) {
 const appController = {
 
     getHomepage: function (req, res) {
-        res.render('homepage');
+        db.findOne(User, { _id: currUser._id }, 'fname', function (result) {
+            currUser.fname = result.fname;
+        });
+        res.render('homepage', currUser);
     },
 
     getProfile: function (req, res) {
