@@ -9,7 +9,7 @@ exports.isPrivate = (req, res, next) => {
 
 exports.isPublic = (req, res, next) => {
     if (req.session._id) {
-        res.redirect('/');
+        res.redirect('/homepage');
     }
     else {
         return next();
