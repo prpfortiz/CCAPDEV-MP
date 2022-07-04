@@ -60,24 +60,27 @@
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 class="text-right">Profile Settings</h4>
                     </div>
-                    <form method="post" action="/editprofile" id="editprofile">
+                    <form method="post" action="/editprofile" id="editprofile" class="needs-validation">
                         <fieldset disabled id="editFormFields">
                             <div class="mb-3">
                                 <label class="form-label" for="fname">First Name</label>
                                 <input class="form-control" type="text" name="fname" id="fname" value="{{fname}}"
                                     required />
+                                <div class="invalid-feedback">Please provide a first name.</div>
                             </div>
 
                             <div class=" mb-3">
                                 <label class="form-label" for="lname">Last Name</label>
                                 <input class="form-control" type="text" name="lname" id="lname" value="{{lname}}"
                                     required />
+                                <div class="invalid-feedback">Please provide a last name.</div>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label" for="bday">Birthday</label>
                                 <input class="form-control" type="date" name="bday" id="bday" value="{{bday}}"
                                     required />
+                                <div class="invalid-feedback">Please provide a valid birthday.</div>
                             </div>
                         </fieldset>
 

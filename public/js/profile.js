@@ -11,28 +11,46 @@ $(document).ready(function () {
 
         $('#editFormFields').prop('disabled', false);
     });
+
+    function checkFieldsAndUpdateButton() {
+        if ($('#fname').hasClass('is-invalid') || $('#lname').hasClass('is-invalid') || $('#bday').hasClass('is-invalid')) {
+            $('#submit').prop('disabled', true);
+        }
+        else {
+            $('#submit').prop('disabled', false);
+        }
+    }
+
     $('#fname').keyup(function () {
         var allowed = /^[A-Za-z ]+$/;
         var fname = $('#fname').val();
         if (allowed.test(fname)) {
-            $('#fname').css('background-color', 'white');
-            $('#submit').prop('disabled', false);
+            // $('#fname').css('background-color', 'white');
+            $(this).removeClass('is-invalid');
+            $(this).parent().children('.invalid-feedback').html('Please provide a first name.');
+            checkFieldsAndUpdateButton()
         }
         else {
-            $('#fname').css('background-color', '#b30000');
-            $('#submit').prop('disabled', true);
+            // $('#fname').css('background-color', '#b30000');
+            $(this).addClass('is-invalid');
+            $(this).parent().children('.invalid-feedback').html('Field contains illegal characters');
+            checkFieldsAndUpdateButton()
         }
     });
     $('#lname').keyup(function () {
         var allowed = /^[A-Za-z ]+$/;
         var fname = $('#lname').val();
         if (allowed.test(fname)) {
-            $('#lname').css('background-color', 'white');
-            $('#submit').prop('disabled', false);
+            // $('#lname').css('background-color', 'white');
+            $(this).removeClass('is-invalid');
+            $(this).parent().children('.invalid-feedback').html('Please provide a first name.');
+            checkFieldsAndUpdateButton()
         }
         else {
-            $('#lname').css('background-color', '#b30000');
-            $('#submit').prop('disabled', true);
+            // $('#lname').css('background-color', '#b30000');
+            $(this).addClass('is-invalid');
+            $(this).parent().children('.invalid-feedback').html('Field contains illegal characters');
+            checkFieldsAndUpdateButton()
         }
     });
 });
