@@ -76,45 +76,49 @@
     </div> --}}
 
     <main class="form-register w-100 m-auto">
-        <form method="post" id="login">
+        <form method="post" id="register" class="needs-validation novalidate">
             <img class="mb-4" src="/images/logo.png" width="72" height="72">
             <h1 class="h3 mb-3 fw-normal">CCAPDEV<br>Expense Tracker</h1>
 
-            <div class="form-floating">
+            <div class="form-floating mb-2">
+                <input class="form-control" type="text" name="fname" id="fname" placeholder="First Name" required />
                 <label for="fname">First Name</label>
-                <input class="form-control" type="text" name="fname" id="fname" required />
-                <small class="error" id="errorFname"></small>
+                <div class="invalid-feedback">Please provide a first name.</div>
             </div>
 
-            <div class="form-floating">
+            <div class="form-floating mb-2">
+                <input class="form-control" type="text" name="lname" id="lname" placeholder="Last Name" required />
                 <label for="lname">Last Name</label>
-                <input class="form-control" type="text" name="lname" id="lname" required />
-                <small class="error" id="errorLname"></small>
+                <div class="invalid-feedback">Please provide a last name.</div>
             </div>
 
-            <div class="form-floating">
-                <label for="bday">Birthdate</label>
+            <div class="form-floating mb-2">
                 <input class="form-control" type="date" name="bday" id="bday" required />
+                <label for="bday">Birthday</label>
+                <div class="invalid-feedback">Please provide a valid birthday.</div>
             </div>
 
-            <div class="form-floating">
+            <div class="form-floating mb-2">
+                <input class="form-control" type="text" name="username" id="username" placeholder="Username" required />
                 <label for="username">Username</label>
-                <input class="form-control" type="text" name="username" id="username" required />
-                <small class="error" id="errorUsername"></small>
+                <div class="invalid-feedback">Please choose a username.</div>
             </div>
 
-            <div class="form-floating">
+            <div class="form-floating mb-2">
+                <input class="form-control" type="password" name="pw1" id="pw1" placeholder="Password" required />
                 <label for="pw1">Password</label>
-                <input class="form-control" type="password" name="pw1" id="pw1" required />
-                <small class="error" id="errorPw1"></small>
+                <div class="invalid-feedback">Please provide a password.</div>
             </div>
 
-            <div class="form-floating">
-                <label for="pw2">Confirm your password</label>
-                <input class="form-control" type="password" name="pw2" id="pw2" required />
-                <small class="error" id="errorPw2"></small>
+            <div class="form-floating mb-5">
+                <input class="form-control" type="password" name="pw2" id="pw2" placeholder="Confirm password"
+                    required />
+                <label for="pw2">Confirm password</label>
+                <div class="invalid-feedback">Please confirm your password.</div>
             </div>
+
             <button class="w-100 btn btn-lg btn-primary" type="submit" id="submit">Sign up</button>
+            <p class="mt-4 mb-3 text">Already have an account? <a href="/">Sign in</a></p>
             <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
         </form>
     </main>
