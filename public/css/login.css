@@ -16,11 +16,6 @@ body {
     padding: 15px;
 }
 
-.form-register {
-    max-width: 550px;
-    padding: 15px;
-}
-
 .form-login .form-floating:focus-within {
     z-index: 2;
 }
