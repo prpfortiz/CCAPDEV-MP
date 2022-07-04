@@ -14,10 +14,10 @@ const controller = {
 
     postLogin: function (req, res) {
         // console.log('im called');  
-        
+
         var username = req.body.username;
         var pw = req.body.pw;
-        var remember = req.body.remember;
+        var staysigned = req.body.staysigned;
         db.findOne(User, { username: username }, '_id username pw', function (result) {
             if (result) {
                 var user = {
@@ -28,7 +28,7 @@ const controller = {
                 bcrypt.compare(pw, user.pw, (err, result) => {
                     if (result) {
                         req.session._id = user._id;
-                        if (remember) {
+                        if (staysigned) {
                             req.session.cookie.maxAge = 30 * 24 * 60 * 60 * 1000;
                         }
                         else {
