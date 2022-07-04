@@ -1,6 +1,8 @@
 # CCAPDEV-MP-Expense-Tracker
 Machine Project for CCAPDEV-2022-T2
 
+GitHub repo link: https://github.com/prpfortiz/CCAPDEV-MP/
+
 ## Members
 - CAI, EDISON BARCELA
 - FORTIZ, PATRICK RYAN PINEDA
