@@ -21,4 +21,5 @@ app.post('/editexpense', isPrivate, appController.postEditExpense);
 app.delete('/deleteexpense/:id', isPrivate, appController.deleteExpense);
 app.get('/signout', isPrivate, appController.getSignout);
 // app.delete('/deleteaccount/:userid', appController.deleteAccount);')  // TODO: delete account
+app.get('/about', isPrivate, controller.getAbout);
 module.exports = app;

@@ -45,6 +45,10 @@ const controller = {
                 // res.end();
             }
         });
+    },
+
+    getAbout: function (req, res) {
+        res.render('about');
     }
 }
 
