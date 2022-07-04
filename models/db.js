@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const UserModel = require('./UserModel.js');
-const url = 'mongodb://localhost:27017/CCAPDEV-MP';
+const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/CCAPDEV-MP';
 
 const options = {
     useUnifiedTopology: true,

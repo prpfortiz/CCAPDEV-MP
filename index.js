@@ -13,13 +13,13 @@ app.set(`view engine`, `hbs`);
 hbs.registerPartials(__dirname + `/views/partials`);
 
 dotenv.config();
-port = process.env.PORT;
-hostname = process.env.HOSTNAME;
+port = process.env.PORT || 3000;
+hostname = process.env.HOSTNAME || 'localhost';
 
 app.use(express.static(`public`));
 app.use(session({
     secret: 'EASsz3xrBr',
-    store: MongoStore.create({ mongoUrl: process.env.DB_URL }),
+    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI || 'mongodb://localhost:27017' }),
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false, maxAge: null }
