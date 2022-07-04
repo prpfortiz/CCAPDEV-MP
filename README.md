@@ -23,3 +23,12 @@ Machine Project for CCAPDEV-2022-T2
 - `hbs 4.2.0` - https://www.npmjs.com/package/hbs/v/4.2.0
 - `mongoose 6.4.0` - https://www.npmjs.com/package/mongoose/v/6.4.0
 - `nodemon 2.0.18` - https://www.npmjs.com/package/nodemon/v/2.0.18
+
+## Other libraries
+- jQuery 3.4.1 - https://jquery.com
+- Bootstrap 5.2.0-beta1 - https://getbootstrap.com
+- Font Awesome 5.3.1 - https://fontawesome.com
+
+## References
+- Bootstrap 5.2 docs
+- W3Schools
