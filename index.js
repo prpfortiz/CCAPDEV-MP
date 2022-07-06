@@ -13,8 +13,8 @@ app.set(`view engine`, `hbs`);
 hbs.registerPartials(__dirname + `/views/partials`);
 
 dotenv.config();
-port = process.env.PORT || 3000;
-hostname = process.env.HOSTNAME || 'localhost';
+const port = process.env.PORT || 3000;
+const hostname = process.env.HOSTNAME || 'localhost';
 
 app.use(express.static(`public`));
 app.use(session({
