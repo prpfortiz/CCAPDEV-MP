@@ -14,7 +14,7 @@ hbs.registerPartials(__dirname + `/views/partials`);
 
 dotenv.config();
 const port = process.env.PORT || 3000;
-const hostname = process.env.HOSTNAME || 'localhost';
+// const hostname = process.env.HOSTNAME || 'localhost';
 
 app.use(express.static(`public`));
 app.use(session({
@@ -28,7 +28,11 @@ app.use(`/`, routes);
 
 db.connect();
 
-app.listen(port, hostname, function () {
-    console.log(`Server is running at:`);
-    console.log(`http://` + hostname + `:` + port);
+// app.listen(port, hostname, function () {
+//     console.log(`Server is running at:`);
+//     console.log(`http://` + hostname + `:` + port);
+// });
+
+app.listen(port, function () {
+    console.log(`Server is running at port: ` + port);
 });
