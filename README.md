@@ -2,6 +2,7 @@
 Machine Project for CCAPDEV-2022-T2
 
 GitHub repo link: https://github.com/prpfortiz/CCAPDEV-MP/
+### To see the version demoed: https://github.com/prpfortiz/CCAPDEV-MP/tree/demoed-version
 
 ## Members
 - CAI, EDISON BARCELA
