@@ -1,10 +1,9 @@
 # CCAPDEV-MP-Expense-Tracker
 Machine Project for CCAPDEV-2022-T2
 
-https://ccapdev-expense-tracker.herokuapp.com/ <br> <br>
+![image](https://user-images.githubusercontent.com/69558553/219975669-8dd513dc-37bd-4d3e-b0cb-816cd36e815b.png)
 
-GitHub repo link: https://github.com/prpfortiz/CCAPDEV-MP/
-### To see the version demoed: https://github.com/prpfortiz/CCAPDEV-MP/tree/demoed-version
+### Demo website: https://ccapdev-mp-expense-tracker.herokuapp.com/ <br> <br>
 
 ## Members
 - CAI, EDISON BARCELA
